@@ -12,8 +12,8 @@ form.addEventListener("submit", (event) => {
   const dividendNumber = parseFloat(dividend);
   const dividerNumber = parseFloat(divider);
 
-  // Check if either input is not a valid number or if the divider is 0
-  if (isNaN(dividendNumber) || isNaN(dividerNumber) || dividerNumber === 0) {
+  // Check if either input is not a valid number, if the divider is 0, or if the divider is negative
+  if (isNaN(dividendNumber) || isNaN(dividerNumber) || dividerNumber <= 0) {
     result.innerText = "Division not performed. Invalid number provided. Try again";
     
     // Log the error to the console with the call stack
