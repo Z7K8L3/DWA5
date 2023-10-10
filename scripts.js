@@ -8,4 +8,9 @@ form.addEventListener("submit", (event) => {
   const entries = new FormData(event.target);
   const { dividend, divider } = Object.fromEntries(entries);
   result.innerText = dividend / divider;
+
+  // Calculate the division result and round it down to the nearest whole number
+  const divisionResult = Math.floor(dividend / divider);
+
+  result.innerText = divisionResult;
 });
