@@ -14,10 +14,11 @@ form.addEventListener("submit", (event) => {
 
   // Check if either input is not a valid number, if the divider is 0, or if the divider is negative
   if (isNaN(dividendNumber) || isNaN(dividerNumber) || dividerNumber <= 0) {
-    result.innerText = "Division not performed. Invalid number provided. Try again";
-    
     // Log the error to the console with the call stack
     console.error("Error: Invalid division attempted", new Error().stack);
+
+    // Display a critical error message and replace the entire screen
+    document.body.innerHTML = "<h1>Something critical went wrong. Please reload the page.</h1>";
   } else {
     // Calculate the division result and round it down to the nearest whole number
     const divisionResult = Math.floor(dividendNumber / dividerNumber);
